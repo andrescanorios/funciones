@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
 	float x, y;
-	cout << "ingrese el valor de x: ";
+	printf("ingrese el valor de x: ");
 	cin >> x;
 	if (x<0 || x>50)
 	{
@@ -21,7 +21,7 @@ int main()
 	}
 	else if (x<=25)
 	{
-		y = pow(x, x) + pow(x, 3) - 18;
+		y = pow(x, 3) + pow(x, 3) - 18;
 	}
-	cout << "";
+	cout <<"el valor de x es "<<x<<endl<<"el valor de y es "<<y;
 }
