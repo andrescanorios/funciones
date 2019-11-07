@@ -1,5 +1,8 @@
 #include <string>
 #include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 using namespace std;
 void intercambio(int*x, int*y)
 {
