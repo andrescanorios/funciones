@@ -5,6 +5,9 @@
 
 int main()
 {
-	float num[10];
-
+	float num[10], i;
+	for ( i = 0; i <=10; i++)
+	{
+		cout << "ingresa un numero: " << endl;
+	}
 }
