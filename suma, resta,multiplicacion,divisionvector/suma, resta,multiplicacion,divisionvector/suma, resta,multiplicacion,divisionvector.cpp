@@ -1,13 +1,15 @@
-// suma, resta,multiplicacion,divisionvector.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
-
+#include <string>
 #include <iostream>
-
+using namespace std;
 int main()
 {
-	float num[10], i;
+	float num[10], i, x,suma,resta,multiplicacion,division;
 	for ( i = 0; i <=10; i++)
 	{
 		cout << "ingresa un numero: " << endl;
+		cin >> x;
+		suma = suma + x;
+		cout << suma;
+
 	}
 }
