@@ -7,7 +7,7 @@ int main()
 {
 	int saldoactual, num;
 	double  apuesta;
-	string nombre;
+	string nombre,desicion;
     cout << "ingrese su nombre: ";
 	cin >> nombre;
 	cout << "ingrese su saldo actual: ";
@@ -20,7 +20,7 @@ int main()
 		if (num==1)
 		{
 			saldoactual = saldoactual + apuesta;
-			cout << nombre << "tu ganancia es de " << apuesta << endl;
+			cout << nombre << " tu ganancia es de " << apuesta << endl;
 		}
 		else
 		{
@@ -31,6 +31,15 @@ int main()
 			}
 		}
 		cout << "saldoactual => " << saldoactual << endl;
-	} while (saldoactual!=0);
+		cout <<nombre<<" deseas seguir apostando: "; cin >> desicion;
+		if (saldoactual<=0)
+		{
+			cout << "acabas de endeudarte con el casino :))" << endl;
+		}
+		else
+		{
+			cout << "puedes seguir apostando :)" << endl;
+		}
+	} while (desicion!="no");
 	return 0;
 }
