@@ -17,29 +17,29 @@ int main()
 		num = rand() % 2;
 		cout << "cuanto desea apostar: ";
 		cin >> apuesta;
-		if (num==1)
+		if (saldoactual>apuesta)
 		{
-			saldoactual = saldoactual + apuesta;
-			cout << nombre << " tu ganancia es de " << apuesta << endl;
-		}
-		else
-		{
-			if (num==0)
+			if (num == 1)
 			{
-				saldoactual = saldoactual - apuesta;
-				cout << nombre << "tu perdida es de " << apuesta << endl;
+				saldoactual = saldoactual + apuesta;
+				cout << nombre << " tu ganancia es de " << apuesta << endl;
 			}
-		}
-		cout << "saldoactual => " << saldoactual << endl;
-		cout <<nombre<<" deseas seguir apostando: "; cin >> desicion;
-		if (saldoactual<=0)
-		{
-			cout << "acabas de endeudarte con el casino :))" << endl;
+			else
+			{
+				if (num == 0)
+				{
+					saldoactual = saldoactual - apuesta;
+					cout << nombre << "tu perdida es de " << apuesta << endl;
+				}
+			}
+			cout << "saldoactual => " << saldoactual << endl;
+			cout << nombre << " deseas seguir apostando: "; cin >> desicion;
 		}
 		else
 		{
-			cout << "puedes seguir apostando :)" << endl;
+			cout << "saldo insuficiente no puedes seguir apostando por lo tanto ingresa no" << endl; cin >> desicion;
 		}
+		
 	} while (desicion!="no");
 	return 0;
 }
