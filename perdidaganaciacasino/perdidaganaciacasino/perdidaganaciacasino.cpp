@@ -5,36 +5,32 @@
 using namespace std;
 int main()
 {
-	int saldoactual, num, perdida;
-	double  ganancia, apuesta;
+	int saldoactual, num;
+	double  apuesta;
 	string nombre;
-	bool desicion;
-	srand(time(NULL));
-	num = 1 + rand() % (3-1);
     cout << "ingrese su nombre: ";
 	cin >> nombre;
 	cout << "ingrese su saldo actual: ";
 	cin >> saldoactual;
 	do
 	{
+		num = rand() % 2;
 		cout << "cuanto desea apostar: ";
 		cin >> apuesta;
-		switch (num)
+		if (num==1)
 		{
-		case 1:
-			ganancia = apuesta;
-			saldoactual = saldoactual + ganancia;
-			cout << nombre << " tu ganancia es de " << ganancia << " y tu saldo actual es de " << saldoactual << endl;
-			break;
-		case 2:
-			perdida = apuesta;
-			saldoactual = saldoactual - perdida;
-			cout << nombre << " tu perdida es de " << perdida << " y tu saldo actual es de " << saldoactual << endl;
-			break;
-		default:
-			break;
+			saldoactual = saldoactual + apuesta;
+			cout << nombre << "tu ganancia es de " << apuesta << endl;
 		}
-		cout << "saldoactual => " << saldoactual;
-	} while (saldoactual=0);
+		else
+		{
+			if (num==0)
+			{
+				saldoactual = saldoactual - apuesta;
+				cout << nombre << "tu perdida es de " << apuesta << endl;
+			}
+		}
+		cout << "saldoactual => " << saldoactual << endl;
+	} while (saldoactual!=0);
 	return 0;
 }
