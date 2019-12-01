@@ -5,24 +5,26 @@
 using namespace std;
 int main()
 {
-	int saldoactual, num;
-	double  apuesta;
-	string nombre,desicion;
-    cout << "ingrese su nombre: ";
+	long int saldoactual, ganancia = 0, num;
+	long int  apuesta, saldoinicial;
+	string nombre, desicion;
+	cout << "ingrese su nombre: ";
 	cin >> nombre;
 	cout << "ingrese su saldo actual: ";
-	cin >> saldoactual;
+	cin >> saldoinicial;
 	do
 	{
 		num = rand() % 2;
 		cout << "cuanto desea apostar: ";
 		cin >> apuesta;
-		if (saldoactual>apuesta)
+		saldoactual=saldoinicial;
+		if (saldoactual > apuesta)
 		{
 			if (num == 1)
 			{
 				saldoactual = saldoactual + apuesta;
 				cout << nombre << " tu ganancia es de " << apuesta << endl;
+				ganancia = apuesta;
 			}
 			else
 			{
@@ -33,13 +35,23 @@ int main()
 				}
 			}
 			cout << "saldoactual => " << saldoactual << endl;
-			cout << nombre << " deseas seguir apostando: "; cin >> desicion;
+			if (ganancia<100000)
+			{
+				cout << nombre << " deseas seguir apostando: "; cin >> desicion;
+			}
+			else
+			{
+				cout << "lo siento no puedes seguir apostando :)";
+			}
+			
 		}
 		else
 		{
-			cout << "saldo insuficiente no puedes seguir apostando por lo tanto ingresa no" << endl; cin >> desicion;
+			saldoactual = ganancia + saldoinicial;
+			cout << "tu saldo inicial fue de " << saldoinicial << " y tu saldo actual es de " << saldoactual << endl;
+			cout << "lo siento no puedes seguir apostando por lo tanto ingresa no" << endl; cin >> desicion;
 		}
-		
-	} while (desicion!="no");
+
+	} while (desicion != "no");
 	return 0;
 }
